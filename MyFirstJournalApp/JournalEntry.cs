@@ -13,10 +13,14 @@ namespace MyFirstJournalApp
         public string Content { get; set; }
         public DateTime Timestamp { get; set; }
 
-        void GetSummary()
+        //Fix GetSummary method to add check for the length of the content if it is less than or equal to 10 characters. This method should return the first 10 characters of the content .
+        public string GetSummary()
         {
-            //Returns the exact first 10 characters of the content
-            Console.WriteLine(Content.Substring(0, Math.Min(10, Content.Length)));
+            if (Content.Length <= 10)
+            {
+                return Content;
+            }
+            return Content.Substring(0, 10) + "...";
         }
     }
 }
