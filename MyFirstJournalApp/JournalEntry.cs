@@ -15,15 +15,8 @@ namespace MyFirstJournalApp
 
         void GetSummary()
         {
-            //Returns the exact first 100 characters of the content
-            if (Content.Length <= 100)
-            {
-                Console.WriteLine(Content);
-            }
-            else
-            {
-                Console.WriteLine(Content.Substring(0, 100));
-            }
+            //Returns the exact first 10 characters of the content
+            Console.WriteLine(Content.Substring(0, Math.Min(10, Content.Length)));
         }
     }
 }
